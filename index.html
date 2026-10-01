@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sai Priyanka Taduri | Data Analyst &amp; Data Engineer</title>
+<meta name="description" content="Data analyst with 3+ years at Accenture and an MS in Computer Science (Data Science) from UNC Charlotte. Open to Data Analyst and Data Engineer roles in Charlotte, NC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#18232E; --muted:#56657A; --line:#D3DCE4;
+  --teal:#17677F; --teal-soft:#DCEBF0; --ochre:#B8871A; --ochre-soft:#F6ECD2;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body:"Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#101820; --surface:#17222D; --ink:#E6EDF3; --muted:#9AAABB; --line:#2A3A49;
+    --teal:#5FB4CC; --teal-soft:#16323D; --ochre:#E0B24A; --ochre-soft:#3A3018;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101820; --surface:#17222D; --ink:#E6EDF3; --muted:#9AAABB; --line:#2A3A49;
+  --teal:#5FB4CC; --teal-soft:#16323D; --ochre:#E0B24A; --ochre-soft:#3A3018;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,.node:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:16px;top:16px;background:var(--surface);padding:8px 12px;z-index:10}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font:600 1.05rem var(--display);color:var(--ink);text-decoration:none}
+nav{display:flex;gap:clamp(12px,2.5vw,28px)}
+nav a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--ink)}
+@media (max-width:560px){nav a.opt{display:none}}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center;padding:clamp(48px,8vw,104px) 0 clamp(40px,6vw,72px)}
+@media (max-width:880px){.hero{grid-template-columns:1fr}}
+.status{display:inline-flex;align-items:center;gap:10px;font-weight:500;color:var(--muted);font-size:.95rem;margin:0 0 20px}
+.status i{flex:none;width:9px;height:9px;border-radius:50%;background:#2E9E6B;box-shadow:0 0 0 4px color-mix(in srgb,#2E9E6B 20%,transparent)}
+h1{font:800 clamp(2.6rem,6.4vw,4.6rem)/1.02 var(--display);letter-spacing:-.025em;margin:0 0 24px}
+h1 small{display:block;font-weight:400;font-size:.42em;letter-spacing:-.005em;color:var(--muted);margin-top:14px;line-height:1.3}
+.lede{font-size:clamp(1.15rem,1.8vw,1.3rem);line-height:1.55;max-width:36ch;margin:0 0 32px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--teal)}
+.btn.primary{background:var(--teal);color:var(--bg)}
+.btn.ghost{color:var(--teal)}
+.btn:hover{filter:brightness(1.08)}
+.lineage{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 18px 14px}
+.lineage-head{display:flex;justify-content:space-between;align-items:baseline;font-size:.88rem;color:var(--muted);margin:2px 4px 6px}
+.lineage-head b{font:600 .95rem var(--display);color:var(--ink)}
+.lineage svg{display:block;width:100%;height:auto}
+.edge{fill:none;stroke:var(--line);stroke-width:2}
+.edge.on{stroke:var(--teal)}
+.node{cursor:pointer;outline:none}
+.node rect{fill:var(--bg);stroke:var(--line);stroke-width:1.5;transition:fill .2s,stroke .2s}
+.node .t1{font:600 14px var(--display);fill:var(--ink)}
+.node .t2{font:400 12px var(--body);fill:var(--muted)}
+.node .tag{font:500 10.5px var(--body);fill:var(--teal)}
+.node.on rect{fill:var(--teal-soft);stroke:var(--teal)}
+.node.next rect{fill:var(--ochre-soft);stroke:var(--ochre);stroke-dasharray:5 4}
+.node.next .tag{fill:var(--ochre)}
+.node.next.on rect{stroke-dasharray:none}
+.caption{min-height:4.6em;margin:8px 4px 0;padding-top:10px;border-top:1px solid var(--line);font-size:.95rem;color:var(--muted)}
+.caption strong{color:var(--ink);font-weight:600}
+@media (prefers-reduced-motion:no-preference){
+  .edge.draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw .7s ease-out forwards;animation-delay:var(--d)}
+  @keyframes draw{to{stroke-dashoffset:0}}
+}
+section{padding:clamp(56px,8vw,96px) 0;border-top:1px solid var(--line)}
+.sec-grid{display:grid;grid-template-columns:220px 1fr;gap:clamp(24px,5vw,64px)}
+@media (max-width:760px){.sec-grid{grid-template-columns:1fr}}
+h2{font:700 clamp(1.7rem,3vw,2.2rem)/1.15 var(--display);letter-spacing:-.015em;margin:0}
+h3{font:600 1.25rem/1.3 var(--display);margin:0 0 4px}
+.prose p{margin:0 0 1.1em;max-width:66ch}
+.prose p:first-child{font-size:1.2rem;line-height:1.55}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.timeline > li{position:relative;padding:0 0 44px 40px}
+.timeline > li:last-child{padding-bottom:0}
+.timeline > li::before{content:"";position:absolute;left:0;top:7px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--teal)}
+.timeline > li.now::before{background:var(--teal)}
+.when{font-weight:600;color:var(--teal);font-size:.92rem;margin:0 0 4px}
+.where{color:var(--muted);margin:0 0 10px}
+.timeline p.desc{margin:0;max-width:62ch}
+.impact{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0 18px;max-width:640px}
+.impact div{border-left:3px solid var(--teal);padding:2px 0 2px 12px}
+.impact b{display:block;font:700 1.7rem/1.1 var(--display);color:var(--ink)}
+.impact span{font-size:.9rem;color:var(--muted);line-height:1.4;display:block}
+.desc-list{margin:0;padding-left:1.1em;max-width:62ch}
+.desc-list li{margin-bottom:6px}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,4vw,44px)}
+.project-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;align-items:flex-start;margin-bottom:12px}
+.pill{display:inline-block;font-size:.85rem;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--ochre-soft);color:var(--ochre)}
+.project > p{max-width:64ch;margin:0 0 28px}
+.pipeline{list-style:none;margin:0 0 24px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);counter-reset:s}
+@media (max-width:760px){.pipeline{grid-template-columns:1fr 1fr;gap:16px 0}}
+@media (max-width:420px){.pipeline{grid-template-columns:1fr}}
+.pipeline li{counter-increment:s;position:relative;padding:18px 18px 16px;border-top:3px solid var(--teal)}
+.pipeline li + li{border-left:1px dashed var(--line)}
+.pipeline li::before{content:counter(s);font:700 .85rem var(--display);color:var(--teal);display:block;margin-bottom:6px}
+.pipeline b{display:block;font:600 1.1rem var(--display);margin-bottom:4px}
+.pipeline span{font-size:.93rem;color:var(--muted);line-height:1.5;display:block}
+.project ul.facts{margin:0 0 28px;padding-left:1.1em;max-width:64ch}
+.more{margin-top:clamp(40px,6vw,64px)}
+.more > h3{font-size:1.35rem;margin-bottom:8px}
+.plist{list-style:none;margin:0;padding:0}
+.plist li{display:grid;grid-template-columns:1fr minmax(180px,260px);gap:8px 32px;padding:22px 0;border-bottom:1px solid var(--line)}
+.plist li:last-child{border-bottom:0}
+@media (max-width:700px){.plist li{grid-template-columns:1fr}}
+.plist h4{font:600 1.12rem/1.3 var(--display);margin:0 0 6px}
+.plist p{margin:0;max-width:60ch}
+.plist .stack{font-size:.9rem;color:var(--muted);line-height:1.5;padding-top:3px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px 40px}
+.skills h3{font-size:1.05rem;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{padding:6px 12px;border:1px solid var(--line);border-radius:8px;font-size:.93rem;background:var(--surface)}
+.edu{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:14px}
+.edu > li{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.edu > li:last-child{border-bottom:0}
+.edu span{color:var(--muted)}
+.certs{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.certs em{font-style:normal;color:var(--ochre);font-weight:600;font-size:.88rem;margin-left:8px}
+.contact h2{font-size:clamp(2rem,4.4vw,3.2rem);max-width:18ch;margin-bottom:20px}
+.contact p{max-width:56ch;margin:0 0 28px}
+.links{display:flex;flex-wrap:wrap;gap:12px}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.theme-btn{background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:6px 12px;font:inherit;cursor:pointer}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Sai Priyanka Taduri</a>
+    <nav aria-label="Sections">
+      <a href="#about" class="opt">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#project">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap" id="top">
+    <div class="hero">
+      <div>
+        <p class="status"><i aria-hidden="true"></i>Open to Data Analyst and Data Engineer roles in Charlotte, NC</p>
+        <h1>Sai Priyanka Taduri
+          <small>Data analyst who builds the pipelines behind the numbers</small></h1>
+        <p class="lede">Three years at Accenture turning imperfect data into KPI reporting that leadership could rely on. Now I build the pipelines that feed those reports, too.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn ghost" href="#project">See my pipeline project</a>
+        </div>
+      </div>
+
+      <figure class="lineage" aria-labelledby="lin-title" style="margin:0">
+        <div class="lineage-head"><b id="lin-title">Career lineage</b><span>Select a node</span></div>
+        <svg viewBox="0 0 360 430" role="group" aria-label="Career path drawn as a data lineage graph">
+          <path class="edge draw" data-to="acc" data-from="btech" d="M95 72 C95 100,150 102,150 130" style="--len:90;--d:.2s"/>
+          <path class="edge draw" data-to="acc" data-from="intern" d="M265 72 C265 100,210 102,210 130" style="--len:90;--d:.35s"/>
+          <path class="edge draw" data-to="ms" data-from="acc" d="M180 190 L180 250" style="--len:60;--d:.7s"/>
+          <path class="edge draw" data-to="next" data-from="ms" d="M180 310 L180 368" style="--len:58;--d:1s"/>
+          <g class="node" id="btech" tabindex="0" role="button" aria-label="B.Tech, 2021">
+            <rect x="20" y="16" width="150" height="56" rx="10"/>
+            <text class="tag" x="34" y="34">source</text>
+            <text class="t1" x="34" y="54">B.Tech</text>
+            <text class="t2" x="158" y="54" text-anchor="end">2021</text>
+          </g>
+          <g class="node" id="intern" tabindex="0" role="button" aria-label="Data analytics internship, 2021">
+            <rect x="190" y="16" width="150" height="56" rx="10"/>
+            <text class="tag" x="204" y="34">source</text>
+            <text class="t1" x="204" y="54">Internship</text>
+            <text class="t2" x="328" y="54" text-anchor="end">2021</text>
+          </g>
+          <g class="node" id="acc" tabindex="0" role="button" aria-label="Data Analyst at Accenture, 2021 to 2024">
+            <rect x="50" y="130" width="260" height="60" rx="10"/>
+            <text class="tag" x="66" y="150">model</text>
+            <text class="t1" x="66" y="172">Data Analyst, Accenture</text>
+            <text class="t2" x="296" y="150" text-anchor="end">2021–24</text>
+          </g>
+          <g class="node" id="ms" tabindex="0" role="button" aria-label="MS Computer Science, UNC Charlotte, 2025 to 2026">
+            <rect x="50" y="250" width="260" height="60" rx="10"/>
+            <text class="tag" x="66" y="270">model</text>
+            <text class="t1" x="66" y="292">MS CS, UNC Charlotte</text>
+            <text class="t2" x="296" y="270" text-anchor="end">2025–26</text>
+          </g>
+          <g class="node next" id="next" tabindex="0" role="button" aria-label="Next: your data team">
+            <rect x="50" y="368" width="260" height="56" rx="10"/>
+            <text class="tag" x="66" y="388">exposure</text>
+            <text class="t1" x="66" y="410">Your data team</text>
+            <text class="t2" x="296" y="388" text-anchor="end">next</text>
+          </g>
+        </svg>
+        <figcaption class="caption" id="caption" aria-live="polite"><strong>Like a dbt lineage graph, read top to bottom.</strong> Each step builds on the one above it. Select any node to see what it added.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap sec-grid">
+      <h2>About</h2>
+      <div class="prose">
+        <p>Most of my work comes down to one question: can we trust this number? I like tracing a KPI back to its source, finding where it drifted, and fixing it so the dashboard means what people think it means.</p>
+        <p>At Accenture I spent three years doing exactly that. I worked with stakeholders to define KPIs, built the Power BI dashboards leadership used to track them, and ran the reconciliation and root cause analysis that kept those numbers reliable. Along the way I automated the manual parts of reporting with SQL and Python, which pulled me further upstream into ETL and data modeling.</p>
+        <p>In 2025 I moved to Charlotte for an MS in Computer Science with a Data Science concentration at UNC Charlotte, finishing in May 2026. Since then I've been building end-to-end data projects with dbt, DuckDB and Streamlit, and working with LLM tools in a way that matches how I treat any data source: useful, and always checked against the raw data.</p>
+        <p>I'm looking for Data Analyst or Data Engineer roles where I can own data from ingestion to the report someone opens on Monday morning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap sec-grid">
+      <h2>Experience</h2>
+      <div>
+        <ol class="timeline">
+          <li class="now">
+            <p class="when">Jan 2025 – May 2026</p>
+            <h3>MS in Computer Science, Data Science concentration</h3>
+            <p class="where">UNC Charlotte, Charlotte, NC</p>
+            <p class="desc">Graduate study in data science and computing, alongside hands-on projects in data engineering, analytics applications and retrieval-augmented generation.</p>
+          </li>
+          <li>
+            <p class="when">Nov 2021 – Nov 2024</p>
+            <h3>Data Analyst</h3>
+            <p class="where">Accenture, Hyderabad, India</p>
+            <p class="desc">Partnered with business stakeholders to define KPIs and turn reporting requirements into SQL, dashboards and analysis, then presented what was driving the numbers to leadership and non-technical audiences.</p>
+            <div class="impact">
+              <div><b>8+</b><span>Power BI dashboards tracking 10+ executive KPIs</span></div>
+              <div><b>30%</b><span>less manual reporting effort from automated ETL, 12+ hours saved a month</span></div>
+              <div><b>20%</b><span>lower reporting latency after optimizing 15+ SQL queries</span></div>
+            </div>
+            <ul class="desc-list">
+              <li>Investigated reporting discrepancies with root cause analysis, source-to-report reconciliation and sampling-based checks.</li>
+              <li>Built Excel reconciliation analyses to validate source data against dashboard outputs.</li>
+              <li>Designed data models for 100K+ records, improving reporting accuracy and dashboard reliability.</li>
+              <li>Monitored KPI trends to flag anomalies, risks and performance gaps early.</li>
+            </ul>
+          </li>
+          <li>
+            <p class="when">May 2021 – Jul 2021</p>
+            <h3>Data Analytics Intern</h3>
+            <p class="where">360DigiTMG, Hyderabad, India</p>
+            <p class="desc">Cleaned and validated raw inventory data, ran exploratory and statistical analysis on purchasing and demand patterns, and built forecasts and visual reports to support inventory planning.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="project">
+    <div class="wrap">
+      <div class="project">
+        <div class="project-top">
+          <div>
+            <h2 style="margin-bottom:6px">Data Job Market Skills Tracker</h2>
+            <p style="margin:0;color:var(--muted)">An automated pipeline that runs every day, started September 2026</p>
+          </div>
+          <span class="pill">Active project</span>
+        </div>
+        <p>Which skills are employers asking for this week? This project collects data job postings daily, models them into clean tables, and tracks demand for 23 technical skills across data analyst, data engineer and analytics engineer roles.</p>
+        <ol class="pipeline" aria-label="Pipeline stages">
+          <li><b>Ingest</b><span>Pull new postings daily from the Adzuna API, loading incrementally so nothing is counted twice</span></li>
+          <li><b>Store</b><span>Land raw postings in DuckDB</span></li>
+          <li><b>Transform</b><span>Model in dbt across staging, intermediate and mart layers, with automated data quality tests</span></li>
+          <li><b>Serve</b><span>Show weekly skill demand by role and location in a Streamlit dashboard</span></li>
+        </ol>
+        <ul class="facts">
+          <li>Used Claude and ChatGPT to draft and debug SQL, dbt models and ingestion code, and checked every output against the raw API data.</li>
+        </ul>
+        <a class="btn ghost" href="https://github.com/priyankataduri" rel="noopener">View on GitHub</a>
+      </div>
+
+      <div class="more">
+        <h3>More projects</h3>
+        <ul class="plist">
+          <li>
+            <div><h4>HUD Fair Market Rent Intelligence Dashboard</h4>
+            <p>A deployed data app that ingests Fair Market Rent data from the HUD API and Excel files, with integration tests on ingestion. Five analytics modules cover rent index, hiring market, relocation, salary and market trends, and an LLM layer writes insight cards and answers plain-English questions about the data.</p></div>
+            <div class="stack">Python, pandas, HUD API, Streamlit Community Cloud, LLMs</div>
+          </li>
+          <li>
+            <div><h4>RAG-Based Knowledge Retrieval System</h4>
+            <p>Semantic search over documents using OpenAI embeddings and Pinecone, with ingestion, chunking and grounded answers from GPT-3.5 and GPT-4. Answers were evaluated against the source documents to cut unsupported responses.</p></div>
+            <div class="stack">Python, OpenAI API, Pinecone, Streamlit</div>
+          </li>
+          <li>
+            <div><h4>Healthcare Inventory Analytics</h4>
+            <p>Cleaned and analyzed 20K+ inventory records with SQL window functions and statistical forecasting to explain recurring shortages and overstock, then tracked 8+ inventory KPIs on dashboards.</p></div>
+            <div class="stack">Python, SQL, forecasting</div>
+          </li>
+          <li>
+            <div><h4>SpaceX Launch Success Prediction</h4>
+            <p>Collected launch data from SpaceX APIs and web scraping, explored it with SQL and EDA, and trained classification models to predict Falcon 9 landing success. Part of the IBM Data Science program.</p></div>
+            <div class="stack">Python, SQL, Plotly Dash, Folium, scikit-learn</div>
+          </li>
+          <li>
+            <div><h4>AI-Powered Financial Chatbot Prototype</h4>
+            <p>Extracted figures from SEC 10-K and 10-Q filings and calculated year-over-year trends in revenue, net income and cash flow for a chatbot prototype in BCG's GenAI job simulation.</p></div>
+            <div class="stack">Python, pandas, generative AI</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap sec-grid">
+      <h2>Skills</h2>
+      <div>
+        <div class="skills">
+          <div><h3>Programming and databases</h3>
+            <ul class="chips"><li>SQL</li><li>Python (pandas)</li><li>PostgreSQL</li><li>MySQL</li><li>MongoDB Atlas</li><li>DuckDB</li></ul></div>
+          <div><h3>BI and visualization</h3>
+            <ul class="chips"><li>Power BI</li><li>Tableau</li><li>Excel</li><li>Streamlit</li><li>Plotly Dash</li></ul></div>
+          <div><h3>Data engineering</h3>
+            <ul class="chips"><li>ETL</li><li>dbt</li><li>Star and snowflake schemas</li><li>Data warehousing</li><li>Microsoft Fabric</li></ul></div>
+          <div><h3>Data quality</h3>
+            <ul class="chips"><li>Validation</li><li>Reconciliation</li><li>Data quality checks</li><li>Root cause analysis</li></ul></div>
+          <div><h3>Analytics and statistics</h3>
+            <ul class="chips"><li>EDA</li><li>KPI analysis</li><li>Trend and anomaly analysis</li><li>A/B testing</li><li>Regression</li><li>Classification</li><li>Forecasting</li></ul></div>
+          <div><h3>AI and LLMs</h3>
+            <ul class="chips"><li>OpenAI API</li><li>RAG</li><li>Pinecone</li><li>Prompt engineering</li><li>AI-assisted SQL and EDA</li></ul></div>
+        </div>
+        <ul class="edu" aria-label="Education and certifications">
+          <li><strong>MS Computer Science, Data Science concentration</strong><span>UNC Charlotte, 2026</span></li>
+          <li><strong>B.Tech</strong><span>2021</span></li>
+          <li><div><strong>Certifications</strong>
+            <ul class="certs"><li>IBM Data Science Professional</li><li>Google Data Analytics Professional</li><li>Microsoft PL-300 Power BI Data Analyst<em>In progress</em></li></ul></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Hiring for a data analyst or data engineer?</h2>
+      <p>I'm based in Charlotte, North Carolina and happy to talk about roles where reliable data helps a team make better calls. LinkedIn or email is the quickest way to reach me.</p>
+      <div class="links">
+        <a class="btn primary" href="https://www.linkedin.com/in/priyankataduri" rel="noopener">Message me on LinkedIn</a>
+        <a class="btn ghost" href="mailto:staduri2@charlotte.edu">staduri2@charlotte.edu</a>
+        <a class="btn ghost" href="https://github.com/priyankataduri" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Sai Priyanka Taduri, Charlotte, NC</span>
+    <button class="theme-btn" id="themeBtn" type="button">Switch theme</button>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var info = {
+    btech:"<strong>B.Tech, 2021.</strong> The foundation: programming, databases and the math that everything later builds on.",
+    intern:"<strong>Data analytics internship, 2021.</strong> Three months cleaning, analyzing and forecasting inventory data. The first time I saw analysis change a real decision.",
+    acc:"<strong>Data Analyst at Accenture, 2021 to 2024.</strong> 8+ Power BI dashboards, 10+ executive KPIs, and the reconciliation work that made people trust them.",
+    ms:"<strong>MS in Computer Science, UNC Charlotte, 2025 to 2026.</strong> Moving upstream: dbt and DuckDB pipelines, deployed data apps and RAG systems.",
+    next:"<strong>Next: your data team.</strong> Everything above, pointed at your data. Open to Data Analyst and Data Engineer roles."
+  };
+  var ups = {btech:[], intern:[], acc:["btech","intern"], ms:["acc","btech","intern"], next:["ms","acc","btech","intern"]};
+  var cap = document.getElementById("caption");
+  var nodes = document.querySelectorAll(".node");
+  var edges = document.querySelectorAll(".edge");
+  function select(id){
+    var path = [id].concat(ups[id]);
+    nodes.forEach(function(n){ n.classList.toggle("on", path.indexOf(n.id) > -1); });
+    edges.forEach(function(e){ e.classList.toggle("on", path.indexOf(e.dataset.to) > -1 && path.indexOf(e.dataset.from) > -1); });
+    cap.innerHTML = info[id];
+  }
+  nodes.forEach(function(n){
+    n.addEventListener("click", function(){ select(n.id); });
+    n.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); select(n.id); }});
+  });
+
+  var root = document.documentElement, btn = document.getElementById("themeBtn");
+  function current(){ return root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); }
+  try { var saved = localStorage.getItem("theme"); if(saved) root.dataset.theme = saved; } catch(e){}
+  btn.addEventListener("click", function(){
+    var next = current()==="dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    try { localStorage.setItem("theme", next); } catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
